@@ -11,8 +11,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.slop.terraspore.TerraSpore;
-import net.slop.terraspore.block.custom.ShitInfectedCoalOreBlock;
-import net.slop.terraspore.block.custom.ShitInfectedOreBlock;
+import net.slop.terraspore.block.custom.InfectedOreBlock;
 import net.slop.terraspore.item.ModItems;
 
 import java.util.function.Supplier;
@@ -31,8 +30,8 @@ public class ModBlocks {
         return ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), new Item.Properties()));
     }
 
-    public static final RegistryObject<Block> SHIT_INFECTED_COAL_ORE = registerBlock("shit_infected_coal_ore",
-            () -> new ShitInfectedCoalOreBlock(BlockBehaviour.Properties.copy(Blocks.COAL_ORE).sound(SoundType.BASALT)));
+    public static final RegistryObject<Block> INFECTED_ORE = registerBlock("infected_ore",
+            () -> new InfectedOreBlock(BlockBehaviour.Properties.copy(Blocks.STONE).sound(SoundType.BASALT).noLootTable()));
 
     public static void register(IEventBus bus){
         BLOCKS.register(bus);

@@ -9,6 +9,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import net.slop.terraspore.TerraSpore;
 import net.slop.terraspore.block.ModBlocks;
+import net.slop.terraspore.block.entity.ModBlockEntities;
 
 public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB_DEFERRED_REGISTER =
@@ -19,7 +20,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.terraspore_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.SHIT.get());
-                        pOutput.accept(ModBlocks.SHIT_INFECTED_COAL_ORE.get());
+                        pOutput.accept(ModBlocks.INFECTED_ORE.get());
                     })
                     .build());
 

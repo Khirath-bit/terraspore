@@ -13,6 +13,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.slop.terraspore.block.ModBlocks;
+import net.slop.terraspore.block.entity.ModBlockEntities;
 import net.slop.terraspore.item.ModCreativeModeTabs;
 import net.slop.terraspore.item.ModItems;
 import org.slf4j.Logger;
@@ -32,6 +33,7 @@ public class TerraSpore
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlockEntities.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

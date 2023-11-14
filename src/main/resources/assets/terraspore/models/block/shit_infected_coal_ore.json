@@ -1,6 +1,0 @@
-﻿{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "terraspore:block/shit_infected_coal_ore"
-  }
-}

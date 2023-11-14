@@ -3,15 +3,13 @@ package net.slop.terraspore.item.custom;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BucketItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
-import net.minecraftforge.event.level.NoteBlockEvent;
-import net.slop.terraspore.block.custom.ShitInfectedOreBlock;
+import net.slop.terraspore.block.ModBlocks;
+import net.slop.terraspore.block.custom.InfectedOreBlock;
 
 public class ShitItem extends Item {
     public ShitItem(Properties pProperties) {
@@ -32,11 +30,8 @@ public class ShitItem extends Item {
 
         pContext.getPlayer().sendSystemMessage(Component.literal(state.getBlock().getDescriptionId()));
 
-        if(ShitInfectedOreBlock.canReplace(level, position)){
-            BlockState infectedState = ShitInfectedOreBlock.getReplacementState(level, position);
-
-            if(infectedState == null)
-                return InteractionResult.FAIL;
+        if(InfectedOreBlock.canReplace(level, position)){
+            BlockState infectedState = ((InfectedOreBlock)ModBlocks.INFECTED_ORE.get()).getInfectedState(level, position);
 
             level.setBlock(position, infectedState, 2|1);
             level.gameEvent(pContext.getPlayer(), GameEvent.BLOCK_PLACE, position);
